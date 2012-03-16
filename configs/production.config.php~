@@ -1,0 +1,40 @@
+<?php
+
+return array(
+    'resources' => array(
+		'frontController' => array(
+			'params' => array(
+				'displayExceptions' => 0,
+				),
+			),
+		'db' => array(
+			'adapter' => 'PDO_MYSQL',
+			'params' => array(
+				'dbname' => 'db043507',
+				'username' => 'db043507',
+				'password' => 'aqu7jio',
+				'host' => 'vsd20.korax.net',
+				'profiler' => array(
+					'enabled' => false,
+					),
+				),
+			),
+		'shoppingcartservice' => array(
+			'mappers' => array(
+				'itemConfig' => array(
+					'configFilename' => APPLICATION_PATH . '/configs/ShoppingCart/itemconfigs.ini',
+					),
+				'cartOrder' => array(
+					'cartOrderFile' => APPLICATION_PATH . '/_data/ShoppingCart/cartorders.csv',
+					),
+				),
+			),
+		'paymentservice' => array(
+			'adapter' => 'Beanstream'
+			'params' => array(
+				'beanstream_url' => 'https://www.beanstream.com/scripts/process_transaction.asp',
+				'beanstream_merchant_id' => '228050000',
+				),
+			),
+		),
+	);

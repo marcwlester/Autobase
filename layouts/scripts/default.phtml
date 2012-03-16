@@ -1,0 +1,22 @@
+<?php echo $this->doctype(); ?>
+<html>
+	<head>
+		<?php echo $this->headMeta()
+			->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8')
+			->appendHttpEquiv('Content-Language', 'en-CA') . "\n"; ?>
+		<?php echo $this->headLink()
+			->appendStylesheet('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/base/jquery-ui.css') . "\n"; ?>
+		<?php echo $this->headStyle() . "\n"; ?>
+		<?php echo $this->headScript()
+			->prependFile('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js')
+			->prependFile('https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js') . "\n"; ?>
+		<?php echo $this->headTitle()->setSeparator(' : ') . "\n"; ?>
+	</head>
+	<body>
+		<div class='main'>
+			<div class='content'>
+				<?php echo $this->layout()->content . "\n"; ?>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<?php
+
+return array(
+	'phpSettings' => array(
+        'display_startup_errors' => 1,
+        'display_errors' => 1,
+        'error_reporting' => (E_ALL ^ E_NOTICE)
+        ),
+    'resources' => array(
+		'frontController' => array(
+			'params' => array(
+				'displayExceptions' => 1,
+				),
+			),
+		'db' => array(
+			'adapter' => 'PDO_MYSQL',
+			'params' => array(
+				'dbname' => 'db043507',
+				'username' => 'db043507',
+				'password' => 'aqu7jio',
+				'host' => 'vsd20.korax.net',
+				'profiler' => array(
+					'enabled' => true,
+					'class' => 'Zend_Db_Profiler_Firebug',
+					),
+				),
+			),
+		'shoppingcartservice' => array(
+			'mappers' => array(
+				'itemConfig' => array(
+					'configFilename' => APPLICATION_PATH . '/configs/ShoppingCart/itemconfigs.ini',
+					),
+				'cartOrder' => array(
+					'cartOrderFile' => APPLICATION_PATH . '/_data/ShoppingCart/cartorders.csv',
+					),
+				),
+			),
+		'paymentservice' => array(
+			'adapter' => 'PayPal',
+			'params' => array(
+				'paypal_url' => "https://api-3t.sandbox.paypal.com/nvp",
+				'paypal_user' => "marc_f_1196888599_per_api1.biz-zone.com",
+				'paypal_password' => "77VBZLTRNKQRWTZC",
+				'paypal_signature' => "A1pPX7ZaGzWVwVVbs.V3ejSIcBIsAZmuXO.w6lFm.3S9MYmqOkbNk67Z",
+				'paypal_version' => "60.0",
+				'paypal_currency' => "CAD",
+				),
+			),
+		),
+	);
